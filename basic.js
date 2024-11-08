@@ -57,6 +57,77 @@ console.log("parsed_str : ", parsed_str);
 console.log("parsed_str : ", parsed_str.firstName);
 
 
+console.log("/n/n/n")
+
+
+
+
+
+// call by value
+
+let a=10;
+console.log("Before function call")
+console.log("a : ", a);
+function update(a){
+    a="newvalue";
+}
+update(a);
+console.log("after function call");
+console.log("a : ",a)
+
+
+
+console.log("/n/n/n")
+
+
+//call by reference
+
+let arr=[1,2,3];
+console.log("Before function call");
+console.log("arr : ",arr);
+
+function updateArr(arr){
+    arr[0]=100;
+    arr[1]=200;
+    arr[2]=300;
+}
+
+updateArr(arr);
+console.log("After function call");
+console.log("arr : ",arr);
+
+
+
+//closure
+
+
+function outerfunction(){
+    const outervariable="from outer function";
+
+    function innerfunction(){
+        function innerfunction1(){
+            console.log("outervariable : ",outervariable);
+        }
+        return innerfunction1;
+    }
+    return innerfunction;
+
+    }
+let result=outerfunction();
+console.log("result : ",result);
+
+
+let result1=-result();
+console.log("result1 : ",result1);
+result1()
+
+
+
+
+
+
+
+
 
 
 
